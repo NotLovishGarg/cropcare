@@ -61,7 +61,7 @@ elif(app_mode=="About"):
 #Prediction Page
 elif(app_mode=="Disease Recognition"):
     st.header("Disease Recognition")
-    test_image = st.file_uploader("Choose an Image:")
+    test_image = st.file_uploader("Choose an Image:", type=["png", "jpg", "jpeg"])
     if(st.button("Show Image")):
         st.image(test_image,width=4,use_column_width=True)
     #Predict button
@@ -88,3 +88,5 @@ elif(app_mode=="Disease Recognition"):
                     'Tomato___Tomato_mosaic_virus',
                     'Tomato___healthy'] 
         st.success("Model is Predicting it's a {}".format(class_name[result_index]))
+    else:
+        st.warning("Please upload an image to continue.")
